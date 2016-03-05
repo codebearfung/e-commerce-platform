@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script>
+    /*
+	if(document.URL.toLowerCase().indexOf('53kf.com') > -1) {
+		document.domain = "53kf.com";
+	}else if(document.URL.toLowerCase().indexOf('53rj.com.cn') > -1){
+		document.domain = "53rj.com.cn";
+	}else if(document.URL.toLowerCase().indexOf('53rj.com') > -1){
+		document.domain = "53rj.com";
+	}else if(document.URL.toLowerCase().indexOf('71baomu.com') > -1){
+		document.domain = "71baomu.com";
+	}
+*/
+	function $I(id) {
+		return document.getElementById(id);
+	}
+	function test() {
+		alert('iframe');
+	}
+	
+	function parseQueryString(url) {
+			url = new String(url);
+			var queryStringValues = new Object(),
+					querystring = url.substring((url.indexOf('?') + 1), url.length),
+					querystringSplit = querystring.split('&');
+			for (i = 0; i < querystringSplit.length; i++) {
+					var pair = querystringSplit[i].split('='),
+							name = pair[0],
+							value = pair[1];
+					queryStringValues[name] = value;
+			}
+			return queryStringValues;
+			
+	}
+
+	function hz6d_creElm(o, t, a) {
+		var d = document, db = document.body;
+		var b = d.createElement(t || 'div');
+		for (var p in o) {
+				p == 'style' ? b[p].cssText = o[p] : b[p] = o[p]
+		}
+		return (a || db).insertBefore(b, (a || db).firstChild)
+	}
+	</script>
+	<title>跨域代理</title>
+</head>
+
+<body>
+<script>
+
+	function get_from_page()
+	{
+		var wlh = window.location.href,
+				from_index = wlh.indexOf('from{'),
+				morf_index = wlh.indexOf('}morf');
+		if (from_index == -1 || morf_index == -1) return 'about:blank';
+		from_index += 5;
+		morf_index += 0;
+		data = wlh.substring(from_index, morf_index).replace(/%27/g,'"').replace(/%22/g,'"');
+		return data.replace(/^\s+|\s+$/gim,'').replace(/^%20|%20$/gim,'');
+	}
+	
+	// 通过客户访问的网页代理iframe的hash发送数据
+	function sendDataToKeHuIframe(data) {
+		//$I('kehu_iframe_proxy').contentWindow.location = get_from_page() + '?hz6d_iframe_proxy#hz6d{' + encodeURI(data) + '}d6zh';
+		parent.location = get_from_page() + '#hz6d{' + encodeURI(data) + '}d6zh';
+	}
+	
+	// 从对话窗口中获取数据
+	function recvDataFromComsIframe(comid, cmd, data){
+		data = data || '';
+		//alert('cmd:"' + cmd + '",comid:"' + comid + '",data:"' + data +'"');
+		sendDataToKeHuIframe('cmd:"' + cmd + '",comid:"' + comid + '",data:"' + data +'"');
+	}
+	
+	// 发送数据到对话窗口
+	function sendDataToComsIframe(comid, cmd, data){
+		data = data || '';
+		try{parent.frames['hz6d_chat_iframe_' + comid].recvDataFromIframeProxy(cmd, data);}catch(e){}
+	}
+	var HZ6D_IFRAME_VARS = {};
+	// 循环检测访问页面有没有数据返回到代理iframe
+	HZ6D_IFRAME_VARS.last_data = '';
+	function recvDataFromKeHuWebPage() {
+		var wlh = window.location.href,
+				hz6d_index = wlh.indexOf('hz6d{'),
+				d6zh_index = wlh.indexOf('}d6zh');
+		if (hz6d_index == -1 || d6zh_index == -1) return ;
+		hz6d_index += 4;
+		d6zh_index += 1;
+		var data = wlh.substring(hz6d_index, d6zh_index).replace(/%27/g,'"').replace(/%22/g,'"');
+		data = decodeURI(data);
+		//alert(data);
+		if (HZ6D_IFRAME_VARS.last_data != data && data != '') {
+			var _data = ((new Function('','return ' + data))());
+			if (_data.comid && _data.cmd) sendDataToComsIframe(_data.comid, _data.cmd, _data.data);
+			HZ6D_IFRAME_VARS.last_data = data;
+		}
+	
+	}
+	setInterval(function(){
+		recvDataFromKeHuWebPage();
+	},100);
+</script>
+
+</body></html>
