@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>『豪情』后台管理</title>
-    <link rel="stylesheet" href="{{asset('assets/css/common.css')}}"/>
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}"/>
-    <script type="text/javascript" src="{{asset('/assets/js/jquery1.12.js')}}"></script>
-    <script type="application/javascript" src="{{asset('/assets/js/layer/layer.js')}}"></script>
+    <title>增岭定制后台管理</title>
+    <link rel="stylesheet" href="{{asset('assets/backend/css/common.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/backend/css/main.css')}}"/>
+    <script type="text/javascript" src="{{asset('/assets/backend/js/jquery1.12.js')}}"></script>
+    <script type="application/javascript" src="{{asset('/assets/layer/layer.js')}}"></script>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -42,12 +42,13 @@
                     {
                         layer.close(_index);
                         if (data.result == 1)
-                                window.location.href=redirect_url;
+                            window.location.href=redirect_url;
                         else
-                                layer.alert(data.msg);
+                            layer.alert(data.msg);
                     }
                 });
             });
         });
     });
 </script>
+

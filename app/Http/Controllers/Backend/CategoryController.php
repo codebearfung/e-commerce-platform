@@ -1,10 +1,9 @@
 <?php
 namespace App\Http\Controllers\Backend;
 
-use App\CategoryDetailModel;
 use App\CategoryModel;
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\BackendController;
 
 class CategoryController extends BackendController
@@ -12,27 +11,29 @@ class CategoryController extends BackendController
     /**
      * 分类列表
      */
-    public function index(Request $request)
+    public function index(Request $request,$id_category=0)
     {
         $category_model = new categoryModel();
+        $params = $categories = [];
+        CategoryModel::getAllCategories($categories);
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $request = $request->all();
-            $where = [
-                'category_name'=>$request['keywords'],
-            ];
-            $pagination = $category_model->pagination($where);
+            $params['where']             = ['category_name'=>$request['keywords']];
+        } else {
+            $params['where']             = ['id_parent_category'=>intval($id_category)];
+            $params['orderBy']['column'] = 'sort';
+            $params['orderBy']['order']  = 'desc';
         }
-        else
-            $pagination = $category_model->pagination();
 
-        $this->labels_del = ['id_category','id_category_detail'];
-        $this->labels_add = ['category_name'=>'分类名'];
+        $pagination = $category_model->pagination($params);
 
+        $this->labels_del = ['id_category','short_description','description','meta_title','meta_keywords','meta_description'];
         $data = [
-            'category_list'=>$pagination,
-            'category_columns'=>$this->setFormLabels($category_model,$this->labels_del,$this->labels_add,false),
+            'id_category'      => $id_category,
+            'categories'       => $categories,
+            'category_list'    => $pagination,
+            'category_columns' => $this->setFormLabels($category_model,$this->labels_del),
         ];
 
         return view('admin.category.index',$data);
@@ -44,43 +45,51 @@ class CategoryController extends BackendController
     public function create(Request $request)
     {
         $category_model = new CategoryModel();
-        $category_detail_model = new CategoryDetailModel();
-        $category_list = [];
-        $category_model->getAllCategories($category_list);
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
+
+        $categories = [];
+        $category_model->getAllCategories($categories);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
-            $data = [
-                'category_name'=>$request['category_name'],
-                'category_type'=>intval($request['category_type']),
-                'active'        =>$request['active'],
-                'create_time'   =>$time,
-                'update_time'   =>$time,
-                'sort'          =>$request['sort'],
+            $category_create_data = [
+                'category_name'      => $request['category_name'],
+                'short_description'  => $request['short_description'],
+                'description'        => $request['description'],
+                'meta_title'         => $request['meta_title'],
+                'meta_keywords'      => $request['meta_keywords'],
+                'meta_description'   => $request['meta_description'],
+                'category_images'    => $request['category_images'],
+                'category_link'      => $request['category_link'],
+                'id_parent_category' => intval($request['id_parent_category']),
+                'level'              => $this->getCategoryLevel($request['id_parent_category']),
+                'active'             => $request['active'],
+                'create_time'        => $time,
+                'update_time'        => $time,
+                'sort'               => $request['sort'],
             ];
 
-            if ($category_model->readOneByCondition(['category_name'=>$request['category_name']]))
+            $condition = ['category_name'=>$request['category_name']];
+
+            $is_exists = $category_model->readOneByCondition($condition);
+
+            if ($is_exists !== null)
                 return redirect('admin/category-create');
 
-            $category = $category_model->add($data);
+            $category = $category_model->add($category_create_data);
 
-            $id_category  = intval($category->id_category);
+            if ($category !== false)
+                return redirect('admin/category');
+            else
+                return redirect('admin/category-create');
 
 
-
-            return redirect('admin/category-create');
         }
 
-        $this->labels_del = ['id_category','id_category_detail','create_time','update_time'];
-        $this->labels_add = ['category_name'=>'分类名','category_images'=>'分类图片','category_link'=>'分类链接'];
-        $category_columns = $this->setFormLabels($category_model,$this->labels_del,$this->labels_add,false);
-
-        $this->labels_del = ['id_category'];
-        $category_detail_columns = $this->setFormLabels($category_detail_model,$this->labels_del);
         $data = [
-            'category_columns'=>array_merge($category_detail_columns,$category_columns),
-            'category_list'=>$category_list,
+            'categories'       => $categories,
+            'category_columns' => $this->setFormLabels($category_model,['id_category','create_time','update_time','level']),
         ];
 
         return view('admin.category.create',$data);
@@ -92,66 +101,57 @@ class CategoryController extends BackendController
      */
     public function update(Request $request,$id_category)
     {
-        $category_model       = new categoryModel();
-        $category_type_model  = new categoryTypeModel();
-        $category_value_model = new categoryValueModel();
+        $category_model = new categoryModel();
+        $category_detail_model = new CategoryDetailModel();
 
-        $category_values = '';
-        $category_value_list = $category_model::find($id_category)->categoryValues;
-
-        foreach($category_value_list as $category_value)
-            $category_values .= $category_value['category_value'].parent::SEPERATOR;
-        $category_values = rtrim($category_values,';');
-        $category_columns = $this->setFormLabels($category_model,['id_category','create_time','update_time'],['category_value'=>'属性值']);
+        $category_list = [];
+        $category_model->getAllCategories($category_list);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
-            $data = [
-                'category_name'=>$request['category_name'],
-                'category_type'=>$request['category_type'],
-                'active'        =>$request['active'],
-                'update_time'   =>$time,
-                'sort'          =>$request['sort'],
+            $category_update = [
+                'category_images' => $request['category_images'],
+                'category_link'   => $request['category_link'],
+                'active'          => $request['active'],
+                'update_time'     => $time,
+                'sort'            => $request['sort'],
             ];
-
+            $id_category = $category_model->upd(intval($id_category),$category_update);
             $id_category = intval($id_category);
-
-            if (strpos($request['category_value'],parent::SEPERATOR))
+            if ($id_category > 0)
             {
-                $is_updated = $category_model->modify($id_category,$data);
+                $category_detail_update = [
+                    'id_category'       => $id_category,
+                    'category_name'     => $request['category_name'],
+                    'short_description' => $request['short_description'],
+                    'description'       => $request['description'],
+                    'meta_title'        => $request['meta_title'],
+                    'meta_keywords'     => $request['meta_keywords'],
+                    'meta_description'  => $request['meta_description'],
+                ];
 
-                if ($is_updated === true)
-                {
-                    foreach($category_value_list as $category_value)
-                    {
-                        $category_value->destroy($category_value['id_category_value']);
-                    }
+                $id_category = $category_detail_model->upd(0,$category_detail_update);
 
-                    $category_values = explode(parent::SEPERATOR,$request['category_value']);
-                    foreach ($category_values as $value)
-                    {
-                        $value_insert = [
-                            'id_category'=>$id_category,
-                            'category_value'=>$value
-                        ];
-                        $category_value_model->add($value_insert);
-                    }
-
-                    return redirect('admin/category');
-                }
+                if (intval($id_category) > 0)
+                    return redirect("admin/category");
             }
-
-            return redirect("admin/category-update/{$id_category}");
+            return redirect("admin/category-modify/{$id_category}");
 
         }
 
+        $this->labels_del = ['id_category'];
+        $category_detail_columns = $this->setFormLabels($category_detail_model,$this->labels_del);
+
+        $this->labels_del = ['id_category','id_parent_category','level','update_time','create_time'];
+        $category_columns = $this->setFormLabels($category_model,$this->labels_del);
+
         $data = [
-            'category'=>$category_model->readOne($id_category),
-            'category_types'=>$category_type_model->readAll(),
-            'category_values'=>$category_values,
-            'category_columns'=>$category_columns,
+            'category'=>$category_model->readOne($id_category,'categoryDetail'),
+            'category_columns'=>array_merge($category_detail_columns,$category_columns),
+            'category_detail_columns'=>$category_detail_columns,
+            'category_list'=>$category_list,
         ];
 
         return view('admin.category.update',$data);
@@ -163,18 +163,17 @@ class CategoryController extends BackendController
      */
     public function view($id_category)
     {
-        $category_model = new categoryModel();
-        $category_type_model = new categoryTypeModel;
-
-        $category_values = categoryModel::find($id_category)->categoryValues->toArray();
-        $category_columns = $this->setFormLabels($category_model,['id_category'],['category_value'=>'属性值']);
+        $category_model        = new categoryModel();
+        $category_columns      = $this->setFormLabels($category_model);
+        $categories = [];
+        CategoryModel::getAllCategories($categories);
 
         $data = [
-            'category'=>$category_model->readOne($id_category),
-            'category_types'=>$category_type_model->readAll(),
-            'category_values'=>$category_values,
+            'category'=>$category_model->readOneById($id_category),
+            'categories'=>$categories,
             'category_columns'=>$category_columns,
         ];
+
         return view('admin.category.view',$data);
     }
 
@@ -195,5 +194,14 @@ class CategoryController extends BackendController
         }
 
         exit;
+    }
+
+    public function getCategoryLevel($id_parent_category)
+    {
+        if ($id_parent_category == 0)
+            return 1;
+        $category_model = new CategoryModel();
+        $category = $category_model->readOneByCondition(['id_parent_category'=>$id_parent_category]);
+        return intval($category['level'])+1;
     }
 }

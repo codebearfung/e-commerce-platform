@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-wrap">
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/category')}}">属性列表</a><span class="crumb-step">&gt;</span><span>新增属性</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/category')}}">分类列表</a><span class="crumb-step">&gt;</span><span>新增分类</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
@@ -12,53 +12,33 @@
                         <tbody>
 
                         @foreach ($category_columns as $key => $column)
-                                <tr @if ($category['category_type']  == '1')id="{{$key}}" style="display:none;" @endif>
-                                    <th style="width:80px;">{{$column}}</th>
-                            @if ($key == 'category_value')
-                                <td>
-                                    @foreach ($category_types as $type)
-                                        @if ($type['id_category_type'] == $category['category_type'])
-                                            @if ($type['category_type_name'] == '文本框')
-
-                                            @elseif ($type['category_type_name'] == '下拉列表')
-                                                <select>
-                                                    @foreach ($category_values as $value)
-                                                        <option>{{$value['category_value']}}</option>
-                                                    @endforeach
-                                                </select>
-                                            @elseif ($type['category_type_name'] == '单选按钮')
-                                                @foreach ($category_values as $value)
-                                                    <input type="radio" name="radio[]" />{{$value['category_value']}}
-                                                @endforeach
-                                            @elseif ($type['category_type_name'] == '多选框')
-                                                @foreach ($category_values as $value)
-                                                    <input type="checkbox"/>{{$value['category_value']}}
-                                                @endforeach
-                                            @else
-
-                                            @endif
+                            <tr>
+                                <th style="width:200px;">{{$column}}</th>
+                                @if ($key == 'active')
+                                    <td>
+                                        @if ($category['active'] == 1)
+                                            是
+                                        @else
+                                            否
                                         @endif
-                                    @endforeach
-                                </td>
-                            @elseif ($key == 'category_type')
-                            <td>
-                                @foreach ($category_types as $type)
-                                    @if ($type['id_category_type'] == $category['category_type'])
-                                        {{$type['category_type_name']}}
-                                    @endif
-                                @endforeach
-                            </td>
-                            @elseif ($key == 'active')
-                                <td>
-                                    @if ($category['active'] == 1)
-                                        是
-                                    @else
-                                        否
-                                    @endif
-                                </td>
-                            @else
-                                <td>{{$category[$key]}}</td>
-                            @endif
+                                    </td>
+                                @elseif ($key == 'short_description' || $key == 'description')
+                                    <td>{!! $category[$key] !!}</td>
+                                @elseif ($key == 'id_parent_category')
+                                    <td>
+                                        @if ($category[$key] == 0)
+                                            根目录
+                                        @else
+                                            @foreach($categories as $cate)
+                                                @if ($category[$key] == $cate['id_category'])
+                                                    {{$cate['category_name']}}
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    </td>
+                                @else
+                                    <td>{{$category[$key]}}</td>
+                                @endif
                             </tr>
                         @endforeach
                         </tbody>

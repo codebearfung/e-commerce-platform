@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use DB;
+use Illuminate\Database\Eloquent\Model;
 
 class BaseModel extends Model
 {
@@ -19,49 +19,81 @@ class BaseModel extends Model
         if (!is_array($data))
             return false;
         $className = $this->getClassName();
-        $data = $className::create($data);
+        $data = $className::create($data)->toArray();
         return $data ? $data : false;
     }
 
     /**
      * 更新数据
      */
-    public function modify($id,$where)
+    public function upd($id,$where,$withRelation='')
     {
-        $className = $this->getClassName();
-        $data = $className::find($id)->update($where);
+        $builder = $this->newQuery();
+        if ($withRelation!='')
+            $builder->with($withRelation);
+        if (!empty($id))
+            $builder->find($id);
+
+        $data = $builder->update($where);
+
         return $data ? $data : false;
     }
 
     /**
      * 查询所有数据
      */
-    public function readAll()
+    public function readAll($where = [],$withRelation = '')
     {
-        $className = $this->getClassName();
-        $data = $className::all()->toArray();
+        $builder = $this->newQuery();
+        if ($withRelation != '')
+            $builder->with($withRelation);
+        if (!empty($where))
+            $builder->where($where);
+        $data = $builder->get()->toArray();
+
+        return is_null($data) ? NULL : $data;
+    }
+
+    /**
+     * 根据id查询单条数据
+     * @param  integer       $id           查询ID
+     * @param  string        $withRelation 关联表
+     * @return array|boolean $data         查询结果
+     */
+    public function readOneById($id,$withRelation = '')
+    {
+        $builder = $this->newQuery();
+
+        if ($withRelation != '')
+            $builder->with($withRelation);
+
+        if (!empty($id))
+            $builder->find($id);
+
+        $data = $builder->first()->toArray();
+
         return $data ? $data : false;
     }
 
     /**
-     * 查询单条数据
-     * @param  integer $id   查询ID
-     * @return array   $data 查询结果
+     * 根据条件查询单条数据
+     * @param  array         $where        查询条件
+     * @param  string        $withRelation 关联表
+     * @return array|boolean               查询结果
      */
-    public function readOne($id)
+    public function readOneByCondition($where=[],$withRelation = '')
     {
-        $className = $this->getClassName();
+        $builder = $this->newQuery();
 
-        $data = $className::find($id)->toArray();
+        if (!empty($where))
+            $builder->where($where);
 
-        return $data ? $data : false;
-    }
+        if ($withRelation != '')
+            $builder->with($withRelation);
 
-    public function readOneByCondition($condition)
-    {
-        $className = $this->getClassName();
-        $data = $className::where($condition)->first();
-        return $data ? $data : false;
+        $data = $builder->first();
+
+        return is_null($data) ? NULL : $data->toArray();
     }
 
     /**
@@ -79,13 +111,22 @@ class BaseModel extends Model
     /**
      * pagination
      */
-    public function pagination($where='',$pageNums=2)
+    public function pagination($params=[],$pageNums=2)
     {
-        $className = $this->getClassName();
-        if (!empty($where))
-            $pagination = $className::where($where)->orderBy('sort','desc')->paginate($pageNums);
-        else
-            $pagination = $className::orderBy('sort','desc')->paginate($pageNums);
+        $builder = $this->newQuery();
+
+        if (!empty($params['with']))
+            $builder = $this->with($params['with']);
+
+        if (!empty($params['where']))
+            $builder = $builder->where($params['where']);
+
+        if (!empty($params['orderBy']))
+        {
+            $builder = $builder->orderBy($params['orderBy']['column'], $params['orderBy']['order']);
+        }
+
+        $pagination = $builder->paginate($pageNums);
 
         return $pagination ? $pagination : false;
     }

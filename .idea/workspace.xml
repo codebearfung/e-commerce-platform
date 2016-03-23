@@ -1,10 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" line="34" mnemonic="4" />
+    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php" line="62" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="572caf02-1bdc-4766-acb1-bb772e571eb0" name="Default" comment="" />
+    <list default="true" id="572caf02-1bdc-4766-acb1-bb772e571eb0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_11_120557_create_orders_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/default/common/footer.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/layout/frontend.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CategoryController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/default/category/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/PaymentModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/default/customer/regSuccess.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/OrderModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/default/common/header.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/default/customer/login.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/ShippingModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_11_121410_create_payment_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/default/customer/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_11_130458_create_customers_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CustomerController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/default/customer/register.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_11_121357_create_shipping_table.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/layer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/Android_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/flat-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/third_pay_close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/clickbtn_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/animate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/admin_login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery_005.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/animate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/microoh-v5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/2-70.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/seclock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/introduce_message.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/mwheelIntent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/icon_off_101147601453977840.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/publicFunction.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/skin/layer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/img003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/Unity3D.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/COCOS2d-x-.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/toolbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z010.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/site_config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jiathis_utility.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/cfspsysp.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/876ee5c1db58c2e8a24a551a6e.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/closebtn_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/footLogo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jia.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/videoArrowBig.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery_006.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/site_config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/a_003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/lxb.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/maizishuo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/earch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/CategoryDetailModel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/user-center.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jiathis_share.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/flat-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/AllSide.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/common-tool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/i003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/seIphone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/OFF-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/ga.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z004.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/video-js.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/i001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/base.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/ie10-viewport-bug-workaround.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/develop.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/ga.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/jquery_003.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/unity.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/just-register.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/4-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/lxb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/wap_u8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/Tween.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery_004.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/img001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/8272bb54-c66b-11e5-a48d-00163e007eac.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/hm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/hz6d_iframe_proxy2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/book.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/PHP.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/wap_u8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/a_003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/Unity3D.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/skin/default/loading-2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/27_big.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z009.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/just-register.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/Swiper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery-1_002.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/_mini_003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/Swiper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/WX.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/share_introduce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jia.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery-1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/layer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/06452834-c592-11e5-a0a4-00163e007eac.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/-70.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/kf.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/skin/default/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/PHP-Web_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/ie10-viewport-bug-workaround.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/kf.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/img007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/mz-common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/kf_ivt_new.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery_007.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z007.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/img006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/icon_off_101147601453977840.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/-Activity.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/flat-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/paramiko_nkfjPPx.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/share_introduce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/weibo_code.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/commonbg_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/Web_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z008.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/zy_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jiathis_utility.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/a_002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_03_04_043307_create_category_detail_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/skin/default/loading-1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/panel.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/layer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/WX.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/4-4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/xiaomai.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/lxb.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/27_middle.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/Python-Zabbix.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/star000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/Chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/extend/layer.ext.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/lxb.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/360-180.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/WX.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/toolbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/ga.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/web.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/off.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jiathis_utility_002.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/jiathis_share.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/microoh-v5.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/off.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/a_002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/i002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/develop.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/microoh-v5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/otherimg_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/microoh-v5.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/jia.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/kf_ivt_new.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/zy_send.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery_003.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/jquery1.12.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/bpa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/_mini_004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery_003.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery_005.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/off.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery_002.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/commonbg_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/analytics.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/27_big.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/70.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery-migrate-1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z006.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/img002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/hm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/dedecms.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery-1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/Chart-extend.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/jquery.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/mz-jPages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/skin/default/icon-ext.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/_mini_002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/common.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery-migrate-1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_03_04_042251_create_product_detail_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/clickbtn_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/hm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z005.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/300x170.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/lxb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/bpa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/VCM1VEY0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/Unity3d.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/hz6d_iframe_proxy2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/dengqiang_oFr9wce.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jiathis_utility.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/jquery_002.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/skin/layer.ext.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery-1_002.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/share_introduce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/iOS_wVXQhJF.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/test_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/OFF-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/Nodejs-web.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/weichat_code.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/OFF-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jiathis_share.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/js/layer/skin/default/loading-0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/z011.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/jquery_006.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/mz-jPages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/Python-Web_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/base.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/just-register.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/otherimg_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery_004.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/closebtn_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/bpa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/img008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/27_big.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/jquery_002.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/我的动态_files/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/公开课 - 麦子学院_files/mz-common.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/common/left_nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/common/left_nav.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_02_030805_create_category_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_02_030805_create_category_table.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_03_04_053639_create_product_value_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_10_174244_create_product_image_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BaseModel.php" afterPath="$PROJECT_DIR$/app/BaseModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/templates/default/home/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/templates/default/home/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/ProductDetailModel.php" afterPath="$PROJECT_DIR$/app/CustomerModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_02_025003_create_product_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_02_025003_create_product_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ShippingController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ShippingController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/attribute/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/attribute/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ProductModel.php" afterPath="$PROJECT_DIR$/app/ProductModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/AttributeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/AttributeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/PaymentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/PaymentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/category/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/category/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/shipping/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/shipping/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AttributeGroupModel.php" afterPath="$PROJECT_DIR$/app/AttributeGroupModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" afterPath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/CustomerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CustomerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/AttributeSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/AttributeSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_04_052542_create_attribute_category_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_04_052542_create_attribute_category_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/order/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/order/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/payment/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/payment/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CategoryModel.php" afterPath="$PROJECT_DIR$/app/CategoryModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/common/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/common/header.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Store.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Store.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/category/update.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/category/update.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/product/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/product/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
+    </list>
     <ignored path="mall.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,38 +324,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/category/create.blade.php">
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/common/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.8">
-              <caret line="20" column="108" selection-start-line="20" selection-start-column="108" selection-end-line="20" selection-end-column="108" />
+            <state vertical-scroll-proportion="-1.4">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33559322">
+              <caret line="36" column="11" selection-start-line="30" selection-start-column="0" selection-end-line="55" selection-end-column="5" />
               <folding>
-                <marker date="1457123682736" expanded="true" signature="2805:3243" placeholder="..." />
-                <marker date="1457123682736" expanded="true" signature="2816:3242" placeholder="..." />
-                <marker date="1457123682736" expanded="true" signature="2979:3231" placeholder="..." />
-                <marker date="1457123682736" expanded="true" signature="2990:3230" placeholder="..." />
+                <element signature="e#47#69#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php">
+      <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52387094">
-              <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
+            <state vertical-scroll-proportion="8.666667">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding>
-                <element signature="e#47#75#0#PHP" expanded="true" />
+                <element signature="e#35#47#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CategoryModel.php">
+      <file leaf-file-name="Store.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Store.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.9">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state vertical-scroll-proportion="-5.3333335">
+              <caret line="532" column="46" selection-start-line="532" selection-start-column="46" selection-end-line="532" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -64,60 +370,63 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/common/header.blade.php" />
-        <option value="$PROJECT_DIR$/config/view.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/templates/default/home/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/SystemController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/common/left_nav.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/attribute-list.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/attribute/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/attribute/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/attribute/update.blade.php" />
-        <option value="$PROJECT_DIR$/app/AttributeModel.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/attribute/view.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/AttributeController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_04_042251_create_product_detail_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_04_043307_create_category_detail_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_02_22_110801_create_admin_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_02_27_060703_create_attribute_value_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_02_27_064835_create_attribute_type_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_02_025003_create_product_table.php" />
-        <option value="$PROJECT_DIR$/app/AttributeGroupModel.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_04_053310_create_product_value__table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_04_053639_create_product_value_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_04_052542_create_attribute_category_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_02_030721_create_attribute_group_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/TableAdminAttributeTypeSeeder.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_02_27_054138_create_attribute_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/AttributeSeeder.php" />
-        <option value="$PROJECT_DIR$/app/ProductModel.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/attribute/view.blade.php" />
+        <option value="$PROJECT_DIR$/../test/index.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_02_030805_create_category_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/category/update.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/category/view.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/product/view.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_03_11_033621_create_order_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_03_11_120557_create_orders_table.php" />
+        <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/order/index.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_03_11_121357_create_shipping_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/ShippingController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_03_11_121410_create_payment_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/shipping/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/payment/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/PaymentController.php" />
+        <option value="$PROJECT_DIR$/app/ShippingModel.php" />
+        <option value="$PROJECT_DIR$/app/PaymentModel.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/common/left_nav.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_03_11_130458_create_customers_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/CustomerController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/OrderModel.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/backend/css/admin_login.css" />
+        <option value="$PROJECT_DIR$/resources/views/layout/frontend.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/home/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/customer/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/customer/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/CustomerModel.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/customer/regSuccess.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/common/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/common/footer.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/CustomerController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CategorySeeder.php" />
-        <option value="$PROJECT_DIR$/app/BaseModel.php" />
-        <option value="$PROJECT_DIR$/app/CategoryDetailModel.php" />
-        <option value="$PROJECT_DIR$/../test/index.php" />
-        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" />
-        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/customer/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/default/category/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/ProductModel.php" />
         <option value="$PROJECT_DIR$/app/CategoryModel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" />
+        <option value="$PROJECT_DIR$/app/BaseModel.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/CategoryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/common/header.blade.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php" />
       </list>
     </option>
   </component>
@@ -137,9 +446,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="61" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1859" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -148,7 +457,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -194,7 +503,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -208,11 +521,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="composer" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -304,18 +661,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="/usr/local/E盘/公司项目源码/大云悦动/furniture/backend/main/protected/models/Category.php" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///data/www/mall/resources/views/admin/common/header.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///data/www/mall/app/CustomerModel.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/templates/default/home" />
       <recent name="$PROJECT_DIR$/resources/views/admin/system" />
       <recent name="$PROJECT_DIR$/resources/views/admin/product" />
       <recent name="$PROJECT_DIR$/resources/views/admin/category" />
       <recent name="$PROJECT_DIR$/resources/views/admin/attribute" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Backend" />
     </key>
   </component>
   <component name="RunManager">
@@ -362,15 +719,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="-4" width="1859" height="1084" extended-state="6" />
+    <frame x="61" y="24" width="1859" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27057558" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1958042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1496945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -384,6 +741,26 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1958042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -399,6 +776,7 @@
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
@@ -408,444 +786,413 @@
           <url>file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/Factory.php</url>
           <line>4</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/attribute/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/order/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5">
-          <caret line="5" column="182" selection-start-line="5" selection-start-column="182" selection-end-line="5" selection-end-column="182" />
-          <folding />
+        <state vertical-scroll-proportion="-1.0887918">
+          <caret line="14" column="109" selection-start-line="14" selection-start-column="109" selection-end-line="14" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_02_030721_create_attribute_group_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_02_025003_create_product_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67287236">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_11_121357_create_shipping_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.4838705">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_11_121410_create_payment_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.4838705">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/shipping/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.697917">
+          <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/payment/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.010417">
+          <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ShippingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.290323">
+          <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ShippingModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.806452">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/PaymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8854166">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PaymentModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/common/left_nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4680851">
+          <caret line="34" column="99" selection-start-line="34" selection-start-column="99" selection-end-line="34" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackendController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.645162">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_11_130458_create_customers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.354838">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1290324">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/customer/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36535662">
+          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/OrderModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06877729">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27510917">
+          <caret line="30" column="81" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/backend/css/admin_login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.389738">
+          <caret line="17" column="183" selection-start-line="17" selection-start-column="183" selection-end-line="17" selection-end-column="183" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/attribute/update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="115.5">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/attribute/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AttributeValueModel.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/frontend.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.022925764">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/attribute/view.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontendController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.733334">
-          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
-          <folding>
-            <element signature="e#853#874#0#HTML" expanded="true" />
-            <element signature="e#923#942#0#HTML" expanded="true" />
-            <marker date="1456917775553" expanded="true" signature="2994:3067" placeholder="{...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.27510917">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/customer/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8688526">
-          <caret line="998" column="26" selection-start-line="998" selection-start-column="20" selection-end-line="998" selection-end-column="26" />
-          <folding />
+        <state vertical-scroll-proportion="0.36681223">
+          <caret line="16" column="140" selection-start-line="16" selection-start-column="110" selection-end-line="16" selection-end-column="140" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Failed/DatabaseFailedJobProvider.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3438178">
-          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-          <folding />
+        <state vertical-scroll-proportion="-2.8">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/process/ExecutableFinder.php">
+    <entry file="file://$PROJECT_DIR$/app/CustomerModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6229508">
-          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-          <folding />
+        <state vertical-scroll-proportion="0.43558952">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/attribute/update.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/customer/regSuccess.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86550975">
-          <caret line="38" column="157" selection-start-line="38" selection-start-column="157" selection-end-line="38" selection-end-column="157" />
-          <folding />
+        <state vertical-scroll-proportion="0.09170306">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/system/system-modify-password.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/customer/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022925764">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/common/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/home/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06877729">
+          <caret line="3" column="93" selection-start-line="3" selection-start-column="93" selection-end-line="3" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/common/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3209607">
+          <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/customer/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="79" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/AttributeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="e#47#70#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AttributeGroupModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.6">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_22_110801_create_admin_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3307393">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_04_053639_create_product_value_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.7">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_04_052542_create_attribute_category_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.2">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_04_043307_create_category_detail_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41763943">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_04_042251_create_product_detail_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51361865">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_02_030721_create_attribute_group_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43579766">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_02_025003_create_product_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.385214">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_27_064835_create_attribute_type_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.2">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_27_060703_create_attribute_value_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_27_054138_create_attribute_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.9">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/product/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.433332">
-          <caret line="95" column="15" selection-start-line="95" selection-start-column="15" selection-end-line="95" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/product/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1538461">
-          <caret line="5" column="188" selection-start-line="5" selection-start-column="188" selection-end-line="5" selection-end-column="188" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-          <folding>
-            <element signature="e#47#69#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/ProductModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35797665">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="43" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_02_030805_create_category_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.540856">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/category/view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4474708">
-          <caret line="59" column="48" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/category/update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8704225">
-          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/category/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8">
-          <caret line="4" column="158" selection-start-line="4" selection-start-column="158" selection-end-line="4" selection-end-column="158" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackendController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.5">
-          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
-            <element signature="e#6#387#0#PHP" expanded="false" />
+            <element signature="e#49#93#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/AttributeSeeder.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/default/category/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.1">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="21" selection-end-column="61" />
+        <state vertical-scroll-proportion="-3.5">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/CategorySeeder.php">
+    <entry file="file://$PROJECT_DIR$/app/ProductModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4335484">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.233334">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AdminModel.php">
+    <entry file="file://$PROJECT_DIR$/app/CategoryModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-22.833334">
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AttributeModel.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/DB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.9">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CategoryDetailModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25290322">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Support/Arrayable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1083871">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Support/Jsonable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1083871">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/json.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9238709">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Queue/QueueableEntity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1083871">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Routing/UrlRoutable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1083871">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.18340611">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/BaseModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9">
+        <state vertical-scroll-proportion="-2.3333333">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8688525">
-          <caret line="1231" column="5" selection-start-line="1231" selection-start-column="5" selection-end-line="1231" selection-end-column="5" />
-          <folding>
-            <element signature="e#48#60#0#PHP" expanded="false" />
+            <element signature="e#23#30#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-41.459015">
-          <caret line="3558" column="33" selection-start-line="3558" selection-start-column="33" selection-end-line="3558" selection-end-column="33" />
+        <state vertical-scroll-proportion="-0.94978166">
+          <caret line="646" column="37" selection-start-line="646" selection-start-column="29" selection-end-line="646" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41266376">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27510917">
+          <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33295584">
+          <caret line="773" column="20" selection-start-line="773" selection-start-column="11" selection-end-line="773" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.666667">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
-            <element signature="e#48#60#0#PHP" expanded="true" />
+            <element signature="e#35#47#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/E盘/公司项目源码/大云悦动/kuihuajia/backend/main/protected/models/JiaCategory.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Store.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.3333335">
+          <caret line="532" column="46" selection-start-line="532" selection-start-column="46" selection-end-line="532" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../test/index.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/common/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5148387">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state vertical-scroll-proportion="-1.4">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/E盘/公司项目源码/大云悦动/furniture/backend/main/protected/models/Category.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.276129">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/category/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.8">
-          <caret line="20" column="108" selection-start-line="20" selection-start-column="108" selection-end-line="20" selection-end-column="108" />
+        <state vertical-scroll-proportion="0.33559322">
+          <caret line="36" column="11" selection-start-line="30" selection-start-column="0" selection-end-line="55" selection-end-column="5" />
           <folding>
-            <marker date="1457123682736" expanded="true" signature="2805:3243" placeholder="..." />
-            <marker date="1457123682736" expanded="true" signature="2816:3242" placeholder="..." />
-            <marker date="1457123682736" expanded="true" signature="2979:3231" placeholder="..." />
-            <marker date="1457123682736" expanded="true" signature="2990:3230" placeholder="..." />
+            <element signature="e#47#69#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CategoryModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7612903">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52387094">
-          <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-          <folding>
-            <element signature="e#47#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

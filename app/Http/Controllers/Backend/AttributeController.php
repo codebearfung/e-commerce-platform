@@ -1,11 +1,11 @@
 <?php
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Requests;
 use App\AttributeModel;
 use App\AttributeTypeModel;
 use App\AttributeValueModel;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Http\Controllers\BackendController;
 
 class AttributeController extends BackendController
@@ -17,18 +17,21 @@ class AttributeController extends BackendController
     {
         $attribute_model = new AttributeModel();
         $attribute_type_model = new AttributeTypeModel();
-
+        $params = [];
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
-            $where = [
+            $params = [
                 'attribute_name'=>$request['keywords'],
             ];
-            $pagination = $attribute_model->pagination($where);
         }
         else
-            $pagination = $attribute_model->pagination();
+        {
+            $params['orderBy']['column'] = 'sort';
+            $params['orderBy']['order']  = 'desc';
 
+        }
+        $pagination = $attribute_model->pagination($params);
         $data = [
             'attribute_list'=>$pagination,
             'attribute_types'=>$attribute_type_model->readAll(),
@@ -175,17 +178,14 @@ class AttributeController extends BackendController
      */
     public function view($id_attribute)
     {
-        $attribute_model = new AttributeModel();
+        $attribute_model      = new AttributeModel();
         $attribute_type_model = new AttributeTypeModel;
-
-        $attribute_values = AttributeModel::find($id_attribute)->attributeValues->toArray();
-        $attribute_columns = $this->setFormLabels($attribute_model,['id_attribute'],['attribute_value'=>'属性值']);
+        $attribute_columns    = $this->setFormLabels($attribute_model,['id_attribute'],['attribute_value'=>'属性值']);
 
         $data = [
-            'attribute'=>$attribute_model->readOne($id_attribute),
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_values'=>$attribute_values,
-            'attribute_columns'=>$attribute_columns,
+            'attribute'         => $attribute_model->readOneById($id_attribute,'attributeValues'),
+            'attribute_types'   => $attribute_type_model->readAll(),
+            'attribute_columns' => $attribute_columns,
         ];
         return view('admin.attribute.view',$data);
     }

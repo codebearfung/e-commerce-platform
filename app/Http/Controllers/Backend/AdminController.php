@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers\Backend;
 
-use Validator;
+use Validator,Session;
 use App\AdminModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BackendController;
@@ -21,6 +21,7 @@ class AdminController extends BackendController
 
 	public function login(Request $request)
 	{
+		dd($request->session());
 		if ($request->session()->has('user'))
 			return redirect('admin');
 		else
@@ -35,8 +36,7 @@ class AdminController extends BackendController
 			'password'=>'bail|required|integer',
 		]);
 
-		if ($validator->fails())
-		{
+		if ($validator->fails()) {
 			return redirect('admin/login')->withErrors($validator)->withInput();
 		}
 
@@ -47,13 +47,10 @@ class AdminController extends BackendController
 
 		$hasExists = AdminModel::hasExists($where);
 
-		if (null !== $hasExists)
-		{
+		if (null !== $hasExists) {
 			$request->session()->put('user',json_encode(['name'=>$r['username']]));
 			return redirect('admin');
-		}
-		else
-		{
+		} else {
 			return redirect('admin/login')->with('hasExists','用户名或密码错误');
 		}
 	}
@@ -61,10 +58,11 @@ class AdminController extends BackendController
 	public function logout(Request $request)
 	{
 		if ($request->session()->has('user')) {
-
+			//var_dump($request->session()->all());
 			$is_forgotten = $request->session()->forget('user');
+			var_dump($request->session());
 
-			if ($is_forgotten === NULL)
+			if ($is_forgotten === null)
 				echo json_encode(['result' => 1]);
 			exit;
 		}

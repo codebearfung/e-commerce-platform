@@ -14,10 +14,16 @@ class CreateCategoryTable extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->increments('id_category');
-            $table->unsignedInteger('id_category_detail');
-            $table->string('product_images',255);
-            $table->string('product_link',255);
+            $table->string('category_name');
+            $table->string('short_description',255);
+            $table->string('description',255);
+            $table->string('meta_title',255);
+            $table->string('meta_keywords',255);
+            $table->string('meta_description',255);
+            $table->string('category_images',255);
+            $table->string('category_link',255);
             $table->unsignedInteger('id_parent_category');
+            $table->unsignedTinyInteger('level');
             $table->unsignedTinyInteger('active');
             $table->dateTime('create_time');
             $table->dateTime('update_time');

@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-wrap">
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/attribute')}}">属性列表</a><span class="crumb-step">&gt;</span><span>新增属性</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/product')}}">产品列表</a><span class="crumb-step">&gt;</span><span>产品详情</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
@@ -11,54 +11,30 @@
                     <table class="insert-tab" width="100%">
                         <tbody>
 
-                        @foreach ($attribute_columns as $key => $column)
-                                <tr @if ($attribute['attribute_type']  == '1')id="{{$key}}" style="display:none;" @endif>
-                                    <th style="width:80px;">{{$column}}</th>
-                            @if ($key == 'attribute_value')
-                                <td>
-                                    @foreach ($attribute_types as $type)
-                                        @if ($type['id_attribute_type'] == $attribute['attribute_type'])
-                                            @if ($type['attribute_type_name'] == '文本框')
-
-                                            @elseif ($type['attribute_type_name'] == '下拉列表')
-                                                <select>
-                                                    @foreach ($attribute_values as $value)
-                                                        <option>{{$value['attribute_value']}}</option>
-                                                    @endforeach
-                                                </select>
-                                            @elseif ($type['attribute_type_name'] == '单选按钮')
-                                                @foreach ($attribute_values as $value)
-                                                    <input type="radio" name="radio[]" />{{$value['attribute_value']}}
-                                                @endforeach
-                                            @elseif ($type['attribute_type_name'] == '多选框')
-                                                @foreach ($attribute_values as $value)
-                                                    <input type="checkbox"/>{{$value['attribute_value']}}
-                                                @endforeach
-                                            @else
-
-                                            @endif
+                        @foreach ($product_columns as $key => $column)
+                            <tr>
+                                <th style="width:200px;">{{$column}}</th>
+                                @if ($key == 'short_description' || $key == 'description')
+                                    <td>{!! $product[$key] !!}</td>
+                                @elseif($key == 'active')
+                                    <td>
+                                        @if ($product[$key] == 1)
+                                            是
+                                        @else
+                                            否
                                         @endif
-                                    @endforeach
-                                </td>
-                            @elseif ($key == 'attribute_type')
-                            <td>
-                                @foreach ($attribute_types as $type)
-                                    @if ($type['id_attribute_type'] == $attribute['attribute_type'])
-                                        {{$type['attribute_type_name']}}
-                                    @endif
-                                @endforeach
-                            </td>
-                            @elseif ($key == 'active')
-                                <td>
-                                    @if ($attribute['active'] == 1)
-                                        是
-                                    @else
-                                        否
-                                    @endif
-                                </td>
-                            @else
-                                <td>{{$attribute[$key]}}</td>
-                            @endif
+                                    </td>
+                                @elseif ($key == 'id_category')
+                                    <td>
+                                        @foreach($categories as $category)
+                                            @if ($category['id_category'] == $product[$key])
+                                                {{$category['category_name']}}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                @else
+                                    <td>{{$product[$key]}}</td>
+                                @endif
                             </tr>
                         @endforeach
                         </tbody>

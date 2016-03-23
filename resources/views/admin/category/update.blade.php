@@ -7,38 +7,34 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="{{url('admin/category-update')}}/{{$category['id_category']}}" method="post" name="form-category-add">
+                <form action="{{url('admin/category-modify')}}/{{$category['id_category']}}" method="post" name="form-category-add">
                     {{csrf_field()}}
                     <table class="insert-tab" width="100%">
                         <tbody>
                         @foreach ($category_columns as $key=>$column)
-                            @if ($key == 'category_type')
-                                <tr>
-                                    <th>{{$column}}</th>
+                            <tr>
+                                <th>{{$column}}</th>
+                                @if (array_key_exists($key,$category_detail_columns))
                                     <td>
-                                        <select name="category_type" id="category_type" class="required">
-                                            @foreach ($category_types as $type)
-                                                <option @if ($type['id_category_type'] == $category[$key])selected @endif value="{{$type['id_category_type']}}">{{$type['category_type_name']}}</option>
-                                            @endforeach
-                                        </select>
+                                    @if (in_array($key,['short_description','description']))
+                                    <textarea id="{{$key}}" name="{{$key}}">
+                                        {!! $category['category_detail'][$key] !!}
+                                    </textarea>
+                                    @else
+                                        <input type="text" class="common-text required" size="50" name="{{$key}}" value="{{$category['category_detail'][$key]}}" />
+                                    @endif
                                     </td>
-                                </tr>
-                            @elseif ($key == 'active')
-                                <tr>
-                                    <th>是否激活：</th>
+                                @elseif ($key == 'active')
                                     <td>
                                         <select name="active" id="active" class="required">
                                             <option value="1">是</option>
                                             <option value="0">否</option>
                                         </select>
                                     </td>
-                                </tr>
-                            @else
-                                <tr @if ($key == 'category_value') id="category_value" @endif>
-                                    <th>{{$column}}</th>
-                                    <td><input type="text" class="common-text required" size="50" value="@if ($key == 'category_value'){{$category_values}}@else {{$category[$key]}} @endif" name="{{$key}}"/> </td>
-                                </tr>
-                            @endif
+                                @else
+                                    <td><input type="text" class="common-text" size="50" value="{{$category[$key]}}" name="{{$key}}"/></td>
+                                @endif
+                            </tr>
                         @endforeach
                             <tr>
                                 <th></th>
@@ -56,6 +52,7 @@
     </div>
     <!--/main-->
 </div>
+    <script type="text/javascript" src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
     <script type="text/javascript">
         $(function(){
             if ($("#category_type").find("option:selected").text() != '文本框')
@@ -71,6 +68,9 @@
                     $("#category_value").hide();
             });
         });
+
+        CKEDITOR.replace('short_description');
+        CKEDITOR.replace('description');
     </script>
 </body>
 </html>

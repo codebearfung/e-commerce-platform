@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>『豪情』后台管理</title>
-    <link rel="stylesheet" href="{{asset('assets/css/admin_login.css')}}"/>
-    <script type="text/javascript" src="{{asset('/assets/js/jquery1.12.js')}}"></script>
-    <script type="application/javascript" src="{{asset('/assets/js/layer/layer.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('assets/backend/css/admin_login.css')}}"/>
+    <script type="text/javascript" src="{{asset('/assets/backend/js/jquery1.12.js')}}"></script>
+    <script type="application/javascript" src="{{asset('/assets/layer/layer.js')}}"></script>
 </head>
 <body>
 <div class="admin_login_wrap">

@@ -30,6 +30,12 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="#"><i class="icon-font">&#xe003;</i>顾客管理</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url('admin/customer')}}"><i class="icon-font">&#xe052;</i>顾客列表</a></li>
+                    </ul>
+                </li>
+                <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>物流管理</a>
                     <ul class="sub-menu">
                         <li><a href="{{url('admin/shipping')}}"><i class="icon-font">&#xe052;</i>物流列表</a></li>

@@ -41,15 +41,7 @@
                                     @endif
                                 </td>
                                 @foreach ($category_columns as $k=>$column)
-                                    @if ($k == 'category_type')
-                                        <td>
-                                            @foreach ($category_types as $category_type)
-                                                @if ($category['category_type'] == $category_type['id_category_type'])
-                                                    {{$category_type['category_type_name']}}
-                                                @endif
-                                            @endforeach
-                                        </td>
-                                    @elseif ($k == 'active')
+                                    @if ($k == 'active')
                                         <td>
                                             @if ($category['active'] == 1)
                                                 <label class="label-success">是</label>
@@ -57,13 +49,22 @@
                                                 <label class="label-warning">否</label>
                                             @endif
                                         </td>
+                                    @elseif ($k == 'id_parent_category')
+                                        <td>
+                                            @if ($category[$k] == 0)
+                                                根目录
+                                            @else
+
+                                            @endif
+                                        </td>
                                     @else
                                         <td>{{$category[$k]}}</td>
                                     @endif
                                 @endforeach
                                 <td>
+                                    <a class="link" href="{{url('admin/category')}}/{{$category['id_category']}}">子分类</a>
                                     <a class="link-view" href="{{url('admin/category-view')}}/{{$category['id_category']}}">查看</a>
-                                    <a class="link-update" href="{{url('admin/category-update')}}/{{$category['id_category']}}">修改</a>
+                                    <a class="link-update" href="{{url('admin/category-modify')}}/{{$category['id_category']}}">修改</a>
                                     <a class="link-del" id_category="{{$category['id_category']}}" href="javascript:void(0);">删除</a>
                                 </td>
                             </tr>

@@ -3,7 +3,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/product')}}">商品列表</a><span class="crumb-step">&gt;</span><span>新增属性</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/product')}}">商品列表</a><span class="crumb-step">&gt;</span><span>新增商品</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
@@ -12,35 +12,37 @@
                     <table class="insert-tab" width="100%">
                         <tbody>
                             @foreach ($product_columns as $key=>$column)
-                                @if ($key == 'product_type')
-                                    @if (!empty($product_types))
-                                        <tr>
-                                            <th>{{$column}}:</th>
-                                            <td>
-                                                <select name="product_type" id="product_type" class="required">
-                                                    @foreach ($product_types as $type)
-                                                        <option id="{{$type['id_product_type']}}" value="{{$type['id_product_type']}}">{{$type['product_type_name']}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    @endif
-                                @elseif ($key == 'active')
-                                    <tr>
-                                        <th>{{$column}}:</th>
+                                <tr>
+                                    <th>{{$column}}:</th>
+                                @if ($key == 'id_category')
+                                    @if (!empty($categories))
                                         <td>
-                                            <select name="active" id="active" class="required">
-                                                <option value="1">是</option>
-                                                <option value="0">否</option>
+                                            <select name="{{$key}}" id="{{$key}}">
+                                                @foreach ($categories as $category)
+                                                    <option value="{{$category['id_category']}}">{{str_repeat('++',$category['level']-1)}}{{$category['category_name']}}</option>
+                                                @endforeach
                                             </select>
                                         </td>
-                                    </tr>
+                                    @endif
+                                @elseif ($key == 'active')
+                                    <td>
+                                        <select name="active" id="active" class="required">
+                                            <option value="1">是</option>
+                                            <option value="0">否</option>
+                                        </select>
+                                    </td>
                                 @else
-                                    <tr @if ($key=='product_value')id="{{$key}}" @endif>
-                                        <th>{{$column}}:</th>
-                                        <td><input type="text" name="{{$key}}" id="{{$key}}" class="common-text required" size="50"/></td>
-                                    </tr>
+                                    <td>
+                                    @if ($key == 'short_description' || $key == 'description')
+                                        <textarea name="{{$key}}" id="{{$key}}">
+
+                                        </textarea>
+                                    @else
+                                        <input type="text" name="{{$key}}" id="{{$key}}" class="common-text required" size="50"/>
+                                    @endif
+                                    </td>
                                 @endif
+                                </tr>
                             @endforeach
                             <tr>
                                 <th></th>
@@ -58,6 +60,7 @@
     </div>
     <!--/main-->
 </div>
+    <script type="text/javascript" src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
     <script type="text/javascript">
         $(function(){
             if ($("#product_type").find("option:selected").text() == '文本框')
@@ -71,6 +74,8 @@
                     $("#product_value").hide();
             });
         });
+        CKEDITOR.replace('short_description');
+        CKEDITOR.replace('description');
     </script>
 </body>
 </html>

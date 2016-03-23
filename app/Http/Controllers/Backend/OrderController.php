@@ -1,41 +1,37 @@
 <?php
 namespace App\Http\Controllers\Backend;
 
-use App\AttributeModel;
-use App\AttributeTypeModel;
-use App\AttributeValueModel;
-use Illuminate\Http\Request;
+use App\OrderModel;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\BackendController;
 
-class AttributeController extends BackendController
+class OrderController extends BackendController
 {
     /**
      * 属性列表
      */
     public function index(Request $request)
     {
-        $attribute_model = new AttributeModel();
-        $attribute_type_model = new AttributeTypeModel();
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
+        $order_model = new OrderModel();
+        $condition = [];
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $request = $request->all();
-            $where = [
-                'attribute_name'=>$request['keywords'],
+            $condition['where'] = [
+                'order_name'=>$request['keywords'],
             ];
-            $pagination = $attribute_model->pagination($where);
+        } else {
+
         }
-        else
-            $pagination = $attribute_model->pagination();
+
+        $pagination = $order_model->pagination($condition);
 
         $data = [
-            'attribute_list'=>$pagination,
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_columns'=>$this->setFormLabels($attribute_model,['id_attribute','deleted_at']),
+            'order_list'    => $pagination,
+            'order_columns' => $this->setFormLabels($order_model,['id_order','deleted_at']),
         ];
 
-        return view('admin.attribute.index',$data);
+        return view('admin.order.index',$data);
     }
 
     /**
@@ -43,151 +39,151 @@ class AttributeController extends BackendController
      */
     public function create(Request $request)
     {
-        $attribute_model       = new AttributeModel();
-        $attribute_type_model  = new AttributeTypeModel();
-        $attribute_value_model = new AttributeValueModel();
+        $order_model       = new orderModel();
+        $order_type_model  = new orderTypeModel();
+        $order_value_model = new orderValueModel();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
             $data = [
-                'attribute_name'=>$request['attribute_name'],
-                'attribute_type'=>intval($request['attribute_type']),
+                'order_name'=>$request['order_name'],
+                'order_type'=>intval($request['order_type']),
                 'active'        =>$request['active'],
                 'create_time'   =>$time,
                 'update_time'   =>$time,
                 'sort'          =>$request['sort'],
             ];
 
-            if ($attribute_model->readOneByCondition(['attribute_name'=>$request['attribute_name']]))
-                return redirect('admin/attribute-create');
+            if ($order_model->readOneByCondition(['order_name'=>$request['order_name']]))
+                return redirect('admin/order-create');
 
-            $attribute = $attribute_model->add($data);
+            $order = $order_model->add($data);
 
-            $id_attribute  = intval($attribute->id_attribute);
+            $id_order  = intval($order->id_order);
 
-            if ($id_attribute > 0)
+            if ($id_order > 0)
             {
-                if (empty($request['attribute_value']))
-                    return redirect('admin/attribute');
+                if (empty($request['order_value']))
+                    return redirect('admin/order');
 
-                if (strpos($request['attribute_value'],parent::SEPERATOR))
+                if (strpos($request['order_value'],parent::SEPERATOR))
                 {
-                    $attribute_values = explode(parent::SEPERATOR,$request['attribute_value']);
-                    foreach ($attribute_values as $attribute_value)
+                    $order_values = explode(parent::SEPERATOR,$request['order_value']);
+                    foreach ($order_values as $order_value)
                     {
-                        $attribute_value_insert = [
-                            'id_attribute'=>$id_attribute,
-                            'attribute_value'=>$attribute_value
+                        $order_value_insert = [
+                            'id_order'=>$id_order,
+                            'order_value'=>$order_value
                         ];
-                        $attribute_value_model->add($attribute_value_insert);
+                        $order_value_model->add($order_value_insert);
                     }
-                    return redirect('admin/attribute');
+                    return redirect('admin/order');
                 }
             }
 
-            return redirect('admin/attribute-add');
+            return redirect('admin/order-add');
         }
 
         $data = [
-            'attribute_columns'=>$this->setFormLabels($attribute_model,['id_attribute','create_time','update_time'],['attribute_value'=>'属性值']),
-            'attribute_types'=>$attribute_type_model->readAll(),
+            'order_columns'=>$this->setFormLabels($order_model,['id_order','create_time','update_time'],['order_value'=>'属性值']),
+            'order_types'=>$order_type_model->readAll(),
         ];
 
-        return view('admin.attribute.create',$data);
+        return view('admin.order.create',$data);
     }
 
     /**
      * 更改属性
-     * @param $id_attribute
+     * @param $id_order
      */
-    public function update(Request $request,$id_attribute)
+    public function update(Request $request,$id_order)
     {
-        $attribute_model       = new AttributeModel();
-        $attribute_type_model  = new AttributeTypeModel();
-        $attribute_value_model = new AttributeValueModel();
+        $order_model       = new orderModel();
+        $order_type_model  = new orderTypeModel();
+        $order_value_model = new orderValueModel();
 
-        $attribute_values = '';
-        $attribute_value_list = $attribute_model::find($id_attribute)->attributeValues;
+        $order_values = '';
+        $order_value_list = $order_model::find($id_order)->orderValues;
 
-        foreach($attribute_value_list as $attribute_value)
-            $attribute_values .= $attribute_value['attribute_value'].parent::SEPERATOR;
-        $attribute_values = rtrim($attribute_values,';');
-        $attribute_columns = $this->setFormLabels($attribute_model,['id_attribute','create_time','update_time'],['attribute_value'=>'属性值']);
+        foreach($order_value_list as $order_value)
+            $order_values .= $order_value['order_value'].parent::SEPERATOR;
+        $order_values = rtrim($order_values,';');
+        $order_columns = $this->setFormLabels($order_model,['id_order','create_time','update_time'],['order_value'=>'属性值']);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
             $data = [
-                'attribute_name'=>$request['attribute_name'],
-                'attribute_type'=>$request['attribute_type'],
+                'order_name'=>$request['order_name'],
+                'order_type'=>$request['order_type'],
                 'active'        =>$request['active'],
                 'update_time'   =>$time,
                 'sort'          =>$request['sort'],
             ];
 
-            $id_attribute = intval($id_attribute);
+            $id_order = intval($id_order);
 
-            if (strpos($request['attribute_value'],parent::SEPERATOR))
+            if (strpos($request['order_value'],parent::SEPERATOR))
             {
-                $is_updated = $attribute_model->modify($id_attribute,$data);
+                $is_updated = $order_model->modify($id_order,$data);
 
                 if ($is_updated === true)
                 {
-                    foreach($attribute_value_list as $attribute_value)
+                    foreach($order_value_list as $order_value)
                     {
-                        $attribute_value->destroy($attribute_value['id_attribute_value']);
+                        $order_value->destroy($order_value['id_order_value']);
                     }
 
-                    $attribute_values = explode(parent::SEPERATOR,$request['attribute_value']);
-                    foreach ($attribute_values as $value)
+                    $order_values = explode(parent::SEPERATOR,$request['order_value']);
+                    foreach ($order_values as $value)
                     {
                         $value_insert = [
-                            'id_attribute'=>$id_attribute,
-                            'attribute_value'=>$value
+                            'id_order'=>$id_order,
+                            'order_value'=>$value
                         ];
-                        $attribute_value_model->add($value_insert);
+                        $order_value_model->add($value_insert);
                     }
 
-                    return redirect('admin/attribute');
+                    return redirect('admin/order');
                 }
             }
 
-            return redirect("admin/attribute-update/{$id_attribute}");
+            return redirect("admin/order-update/{$id_order}");
 
         }
 
         $data = [
-            'attribute'=>$attribute_model->readOne($id_attribute),
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_values'=>$attribute_values,
-            'attribute_columns'=>$attribute_columns,
+            'order'=>$order_model->readOne($id_order),
+            'order_types'=>$order_type_model->readAll(),
+            'order_values'=>$order_values,
+            'order_columns'=>$order_columns,
         ];
 
-        return view('admin.attribute.update',$data);
+        return view('admin.order.update',$data);
     }
 
     /**
      * 查看属性
-     * @param $id_attribute
+     * @param $id_order
      */
-    public function view($id_attribute)
+    public function view($id_order)
     {
-        $attribute_model = new AttributeModel();
-        $attribute_type_model = new AttributeTypeModel;
+        $order_model = new orderModel();
+        $order_type_model = new orderTypeModel;
 
-        $attribute_values = AttributeModel::find($id_attribute)->attributeValues->toArray();
-        $attribute_columns = $this->setFormLabels($attribute_model,['id_attribute'],['attribute_value'=>'属性值']);
+        $order_values = orderModel::find($id_order)->orderValues->toArray();
+        $order_columns = $this->setFormLabels($order_model,['id_order'],['order_value'=>'属性值']);
 
         $data = [
-            'attribute'=>$attribute_model->readOne($id_attribute),
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_values'=>$attribute_values,
-            'attribute_columns'=>$attribute_columns,
+            'order'=>$order_model->readOne($id_order),
+            'order_types'=>$order_type_model->readAll(),
+            'order_values'=>$order_values,
+            'order_columns'=>$order_columns,
         ];
-        return view('admin.attribute.view',$data);
+        return view('admin.order.view',$data);
     }
 
     /**
@@ -195,14 +191,14 @@ class AttributeController extends BackendController
      */
     public function delete(Request $request)
     {
-        $id_attribute = $request->input('id_attribute');
+        $id_order = $request->input('id_order');
 
-        if (empty($id_attribute))
+        if (empty($id_order))
             echo 'false';
         else
         {
-            $attribute_model = new AttributeModel;
-            $result = $attribute_model->del(intval($id_attribute));
+            $order_model = new orderModel;
+            $result = $order_model->del(intval($id_order));
             echo $result ? json_encode(['result' => 1]) : json_encode(['result' => 0, 'msg' => 'delete it fail!!!']);
         }
 

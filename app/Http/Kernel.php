@@ -34,6 +34,15 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
         ],
+
+        'backend' => [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,//使用session必须引入此文件
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,//可以在验证错误跳转后在模板打印出session保存的错误信息
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\Authenticate::class,//后台验证,session没有user则跳转到登陆页面
+        ],
     ];
 
     /**

@@ -18,20 +18,20 @@
                                 <td>
                                     @foreach ($attribute_types as $type)
                                         @if ($type['id_attribute_type'] == $attribute['attribute_type'])
-                                            @if ($type['attribute_type_name'] == '文本框')
+                                            @if ($type['attribute_type_name'] == 'text')
 
-                                            @elseif ($type['attribute_type_name'] == '下拉列表')
+                                            @elseif ($type['attribute_type_name'] == 'select')
                                                 <select>
-                                                    @foreach ($attribute_values as $value)
+                                                    @foreach ($attribute['attribute_values'] as $value)
                                                         <option>{{$value['attribute_value']}}</option>
                                                     @endforeach
                                                 </select>
-                                            @elseif ($type['attribute_type_name'] == '单选按钮')
-                                                @foreach ($attribute_values as $value)
+                                            @elseif ($type['attribute_type_name'] == 'radio')
+                                                @foreach ($attribute['attribute_values'] as $value)
                                                     <input type="radio" name="radio[]" />{{$value['attribute_value']}}
                                                 @endforeach
-                                            @elseif ($type['attribute_type_name'] == '多选框')
-                                                @foreach ($attribute_values as $value)
+                                            @elseif ($type['attribute_type_name'] == 'checkbox')
+                                                @foreach ($attribute['attribute_values'] as $value)
                                                     <input type="checkbox"/>{{$value['attribute_value']}}
                                                 @endforeach
                                             @else

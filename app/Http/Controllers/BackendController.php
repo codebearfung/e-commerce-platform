@@ -19,6 +19,14 @@ class BackendController extends Controller
     protected $labels_del = [];
     protected $labels_add = [];
 
+    //查询条件数组
+    protected $condition  = [];
+
+    public function __construct()
+    {
+        session_start();
+    }
+
     /**
      * 获取表单标签
      * @param Illuminate\Database\Eloquent\Model $model

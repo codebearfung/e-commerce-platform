@@ -1,41 +1,37 @@
 <?php
 namespace App\Http\Controllers\Backend;
 
-use App\AttributeModel;
-use App\AttributeTypeModel;
-use App\AttributeValueModel;
+use App\ShippingModel;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\BackendController;
 
-class AttributeController extends BackendController
+class ShippingController extends BackendController
 {
     /**
-     * 属性列表
+     * 地址列表
      */
     public function index(Request $request)
     {
-        $attribute_model = new AttributeModel();
-        $attribute_type_model = new AttributeTypeModel();
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
+        $shipping_model = new ShippingModel();
+        $condition = [];
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $request = $request->all();
-            $where = [
-                'attribute_name'=>$request['keywords'],
+            $condition['where'] = [
+                'shipping_name'=>$request['keywords'],
             ];
-            $pagination = $attribute_model->pagination($where);
+        } else {
+
         }
-        else
-            $pagination = $attribute_model->pagination();
+
+        $pagination = $shipping_model->pagination($condition);
 
         $data = [
-            'attribute_list'=>$pagination,
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_columns'=>$this->setFormLabels($attribute_model,['id_attribute','deleted_at']),
+            'shipping_list'=>$pagination,
+            'shipping_columns'=>$this->setFormLabels($shipping_model),
         ];
 
-        return view('admin.attribute.index',$data);
+        return view('admin.shipping.index',$data);
     }
 
     /**
@@ -43,151 +39,151 @@ class AttributeController extends BackendController
      */
     public function create(Request $request)
     {
-        $attribute_model       = new AttributeModel();
-        $attribute_type_model  = new AttributeTypeModel();
-        $attribute_value_model = new AttributeValueModel();
+        $shipping_model       = new ShippingModel();
+        $shipping_type_model  = new ShippingTypeModel();
+        $shipping_value_model = new ShippingValueModel();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
             $data = [
-                'attribute_name'=>$request['attribute_name'],
-                'attribute_type'=>intval($request['attribute_type']),
+                'shipping_name'=>$request['shipping_name'],
+                'shipping_type'=>intval($request['shipping_type']),
                 'active'        =>$request['active'],
                 'create_time'   =>$time,
                 'update_time'   =>$time,
                 'sort'          =>$request['sort'],
             ];
 
-            if ($attribute_model->readOneByCondition(['attribute_name'=>$request['attribute_name']]))
-                return redirect('admin/attribute-create');
+            if ($shipping_model->readOneByCondition(['shipping_name'=>$request['shipping_name']]))
+                return redirect('admin/shipping-create');
 
-            $attribute = $attribute_model->add($data);
+            $shipping = $shipping_model->add($data);
 
-            $id_attribute  = intval($attribute->id_attribute);
+            $id_shipping  = intval($shipping->id_shipping);
 
-            if ($id_attribute > 0)
+            if ($id_shipping > 0)
             {
-                if (empty($request['attribute_value']))
-                    return redirect('admin/attribute');
+                if (empty($request['shipping_value']))
+                    return redirect('admin/shipping');
 
-                if (strpos($request['attribute_value'],parent::SEPERATOR))
+                if (strpos($request['shipping_value'],parent::SEPERATOR))
                 {
-                    $attribute_values = explode(parent::SEPERATOR,$request['attribute_value']);
-                    foreach ($attribute_values as $attribute_value)
+                    $shipping_values = explode(parent::SEPERATOR,$request['shipping_value']);
+                    foreach ($shipping_values as $shipping_value)
                     {
-                        $attribute_value_insert = [
-                            'id_attribute'=>$id_attribute,
-                            'attribute_value'=>$attribute_value
+                        $shipping_value_insert = [
+                            'id_shipping'=>$id_shipping,
+                            'shipping_value'=>$shipping_value
                         ];
-                        $attribute_value_model->add($attribute_value_insert);
+                        $shipping_value_model->add($shipping_value_insert);
                     }
-                    return redirect('admin/attribute');
+                    return redirect('admin/shipping');
                 }
             }
 
-            return redirect('admin/attribute-add');
+            return redirect('admin/shipping-add');
         }
 
         $data = [
-            'attribute_columns'=>$this->setFormLabels($attribute_model,['id_attribute','create_time','update_time'],['attribute_value'=>'属性值']),
-            'attribute_types'=>$attribute_type_model->readAll(),
+            'shipping_columns'=>$this->setFormLabels($shipping_model,['id_shipping','create_time','update_time'],['shipping_value'=>'属性值']),
+            'shipping_types'=>$shipping_type_model->readAll(),
         ];
 
-        return view('admin.attribute.create',$data);
+        return view('admin.shipping.create',$data);
     }
 
     /**
      * 更改属性
-     * @param $id_attribute
+     * @param $id_shipping
      */
-    public function update(Request $request,$id_attribute)
+    public function update(Request $request,$id_shipping)
     {
-        $attribute_model       = new AttributeModel();
-        $attribute_type_model  = new AttributeTypeModel();
-        $attribute_value_model = new AttributeValueModel();
+        $shipping_model       = new ShippingModel();
+        $shipping_type_model  = new ShippingTypeModel();
+        $shipping_value_model = new ShippingValueModel();
 
-        $attribute_values = '';
-        $attribute_value_list = $attribute_model::find($id_attribute)->attributeValues;
+        $shipping_values = '';
+        $shipping_value_list = $shipping_model::find($id_shipping)->shippingValues;
 
-        foreach($attribute_value_list as $attribute_value)
-            $attribute_values .= $attribute_value['attribute_value'].parent::SEPERATOR;
-        $attribute_values = rtrim($attribute_values,';');
-        $attribute_columns = $this->setFormLabels($attribute_model,['id_attribute','create_time','update_time'],['attribute_value'=>'属性值']);
+        foreach($shipping_value_list as $shipping_value)
+            $shipping_values .= $shipping_value['shipping_value'].parent::SEPERATOR;
+        $shipping_values = rtrim($shipping_values,';');
+        $shipping_columns = $this->setFormLabels($shipping_model,['id_shipping','create_time','update_time'],['shipping_value'=>'属性值']);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
             $data = [
-                'attribute_name'=>$request['attribute_name'],
-                'attribute_type'=>$request['attribute_type'],
+                'shipping_name'=>$request['shipping_name'],
+                'shipping_type'=>$request['shipping_type'],
                 'active'        =>$request['active'],
                 'update_time'   =>$time,
                 'sort'          =>$request['sort'],
             ];
 
-            $id_attribute = intval($id_attribute);
+            $id_shipping = intval($id_shipping);
 
-            if (strpos($request['attribute_value'],parent::SEPERATOR))
+            if (strpos($request['shipping_value'],parent::SEPERATOR))
             {
-                $is_updated = $attribute_model->modify($id_attribute,$data);
+                $is_updated = $shipping_model->modify($id_shipping,$data);
 
                 if ($is_updated === true)
                 {
-                    foreach($attribute_value_list as $attribute_value)
+                    foreach($shipping_value_list as $shipping_value)
                     {
-                        $attribute_value->destroy($attribute_value['id_attribute_value']);
+                        $shipping_value->destroy($shipping_value['id_shipping_value']);
                     }
 
-                    $attribute_values = explode(parent::SEPERATOR,$request['attribute_value']);
-                    foreach ($attribute_values as $value)
+                    $shipping_values = explode(parent::SEPERATOR,$request['shipping_value']);
+                    foreach ($shipping_values as $value)
                     {
                         $value_insert = [
-                            'id_attribute'=>$id_attribute,
-                            'attribute_value'=>$value
+                            'id_shipping'=>$id_shipping,
+                            'shipping_value'=>$value
                         ];
-                        $attribute_value_model->add($value_insert);
+                        $shipping_value_model->add($value_insert);
                     }
 
-                    return redirect('admin/attribute');
+                    return redirect('admin/shipping');
                 }
             }
 
-            return redirect("admin/attribute-update/{$id_attribute}");
+            return redirect("admin/shipping-update/{$id_shipping}");
 
         }
 
         $data = [
-            'attribute'=>$attribute_model->readOne($id_attribute),
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_values'=>$attribute_values,
-            'attribute_columns'=>$attribute_columns,
+            'shipping'=>$shipping_model->readOne($id_shipping),
+            'shipping_types'=>$shipping_type_model->readAll(),
+            'shipping_values'=>$shipping_values,
+            'shipping_columns'=>$shipping_columns,
         ];
 
-        return view('admin.attribute.update',$data);
+        return view('admin.shipping.update',$data);
     }
 
     /**
      * 查看属性
-     * @param $id_attribute
+     * @param $id_shipping
      */
-    public function view($id_attribute)
+    public function view($id_shipping)
     {
-        $attribute_model = new AttributeModel();
-        $attribute_type_model = new AttributeTypeModel;
+        $shipping_model = new ShippingModel();
+        $shipping_type_model = new ShippingTypeModel;
 
-        $attribute_values = AttributeModel::find($id_attribute)->attributeValues->toArray();
-        $attribute_columns = $this->setFormLabels($attribute_model,['id_attribute'],['attribute_value'=>'属性值']);
+        $shipping_values = ShippingModel::find($id_shipping)->shippingValues->toArray();
+        $shipping_columns = $this->setFormLabels($shipping_model,['id_shipping'],['shipping_value'=>'属性值']);
 
         $data = [
-            'attribute'=>$attribute_model->readOne($id_attribute),
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_values'=>$attribute_values,
-            'attribute_columns'=>$attribute_columns,
+            'shipping'=>$shipping_model->readOne($id_shipping),
+            'shipping_types'=>$shipping_type_model->readAll(),
+            'shipping_values'=>$shipping_values,
+            'shipping_columns'=>$shipping_columns,
         ];
-        return view('admin.attribute.view',$data);
+        return view('admin.shipping.view',$data);
     }
 
     /**
@@ -195,14 +191,14 @@ class AttributeController extends BackendController
      */
     public function delete(Request $request)
     {
-        $id_attribute = $request->input('id_attribute');
+        $id_shipping = $request->input('id_shipping');
 
-        if (empty($id_attribute))
+        if (empty($id_shipping))
             echo 'false';
         else
         {
-            $attribute_model = new AttributeModel;
-            $result = $attribute_model->del(intval($id_attribute));
+            $shipping_model = new ShippingModel;
+            $result = $shipping_model->del(intval($id_shipping));
             echo $result ? json_encode(['result' => 1]) : json_encode(['result' => 0, 'msg' => 'delete it fail!!!']);
         }
 

@@ -1,41 +1,37 @@
 <?php
 namespace App\Http\Controllers\Backend;
 
-use App\AttributeModel;
-use App\AttributeTypeModel;
-use App\AttributeValueModel;
+use App\CustomerModel;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\BackendController;
 
-class AttributeController extends BackendController
+class CustomerController extends BackendController
 {
     /**
-     * 属性列表
+     * 顾客列表
      */
     public function index(Request $request)
     {
-        $attribute_model = new AttributeModel();
-        $attribute_type_model = new AttributeTypeModel();
+        $customer_model = new CustomerModel();
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $request = $request->all();
-            $where = [
-                'attribute_name'=>$request['keywords'],
+            $this->condition['condition'] = [
+                'customer_name'=>$request['keywords'],
             ];
-            $pagination = $attribute_model->pagination($where);
+        } else {
+
         }
-        else
-            $pagination = $attribute_model->pagination();
+
+        $pagination = $customer_model->pagination($this->condition);
 
         $data = [
-            'attribute_list'=>$pagination,
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_columns'=>$this->setFormLabels($attribute_model,['id_attribute','deleted_at']),
+            'customer_list'=>$pagination,
+            'customer_columns'=>$this->setFormLabels($customer_model),
         ];
 
-        return view('admin.attribute.index',$data);
+        return view('admin.customer.index',$data);
     }
 
     /**
@@ -43,151 +39,151 @@ class AttributeController extends BackendController
      */
     public function create(Request $request)
     {
-        $attribute_model       = new AttributeModel();
-        $attribute_type_model  = new AttributeTypeModel();
-        $attribute_value_model = new AttributeValueModel();
+        $customer_model       = new CustomerModel();
+        $customer_type_model  = new CustomerTypeModel();
+        $customer_value_model = new CustomerValueModel();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
             $data = [
-                'attribute_name'=>$request['attribute_name'],
-                'attribute_type'=>intval($request['attribute_type']),
+                'customer_name'=>$request['customer_name'],
+                'customer_type'=>intval($request['customer_type']),
                 'active'        =>$request['active'],
                 'create_time'   =>$time,
                 'update_time'   =>$time,
                 'sort'          =>$request['sort'],
             ];
 
-            if ($attribute_model->readOneByCondition(['attribute_name'=>$request['attribute_name']]))
-                return redirect('admin/attribute-create');
+            if ($customer_model->readOneByCondition(['customer_name'=>$request['customer_name']]))
+                return redirect('admin/customer-create');
 
-            $attribute = $attribute_model->add($data);
+            $customer = $customer_model->add($data);
 
-            $id_attribute  = intval($attribute->id_attribute);
+            $id_customer  = intval($customer->id_customer);
 
-            if ($id_attribute > 0)
+            if ($id_customer > 0)
             {
-                if (empty($request['attribute_value']))
-                    return redirect('admin/attribute');
+                if (empty($request['customer_value']))
+                    return redirect('admin/customer');
 
-                if (strpos($request['attribute_value'],parent::SEPERATOR))
+                if (strpos($request['customer_value'],parent::SEPERATOR))
                 {
-                    $attribute_values = explode(parent::SEPERATOR,$request['attribute_value']);
-                    foreach ($attribute_values as $attribute_value)
+                    $customer_values = explode(parent::SEPERATOR,$request['customer_value']);
+                    foreach ($customer_values as $customer_value)
                     {
-                        $attribute_value_insert = [
-                            'id_attribute'=>$id_attribute,
-                            'attribute_value'=>$attribute_value
+                        $customer_value_insert = [
+                            'id_customer'=>$id_customer,
+                            'customer_value'=>$customer_value
                         ];
-                        $attribute_value_model->add($attribute_value_insert);
+                        $customer_value_model->add($customer_value_insert);
                     }
-                    return redirect('admin/attribute');
+                    return redirect('admin/customer');
                 }
             }
 
-            return redirect('admin/attribute-add');
+            return redirect('admin/customer-add');
         }
 
         $data = [
-            'attribute_columns'=>$this->setFormLabels($attribute_model,['id_attribute','create_time','update_time'],['attribute_value'=>'属性值']),
-            'attribute_types'=>$attribute_type_model->readAll(),
+            'customer_columns'=>$this->setFormLabels($customer_model,['id_customer','create_time','update_time'],['customer_value'=>'属性值']),
+            'customer_types'=>$customer_type_model->readAll(),
         ];
 
-        return view('admin.attribute.create',$data);
+        return view('admin.customer.create',$data);
     }
 
     /**
      * 更改属性
-     * @param $id_attribute
+     * @param $id_customer
      */
-    public function update(Request $request,$id_attribute)
+    public function update(Request $request,$id_customer)
     {
-        $attribute_model       = new AttributeModel();
-        $attribute_type_model  = new AttributeTypeModel();
-        $attribute_value_model = new AttributeValueModel();
+        $customer_model       = new CustomerModel();
+        $customer_type_model  = new CustomerTypeModel();
+        $customer_value_model = new CustomerValueModel();
 
-        $attribute_values = '';
-        $attribute_value_list = $attribute_model::find($id_attribute)->attributeValues;
+        $customer_values = '';
+        $customer_value_list = $customer_model::find($id_customer)->customerValues;
 
-        foreach($attribute_value_list as $attribute_value)
-            $attribute_values .= $attribute_value['attribute_value'].parent::SEPERATOR;
-        $attribute_values = rtrim($attribute_values,';');
-        $attribute_columns = $this->setFormLabels($attribute_model,['id_attribute','create_time','update_time'],['attribute_value'=>'属性值']);
+        foreach($customer_value_list as $customer_value)
+            $customer_values .= $customer_value['customer_value'].parent::SEPERATOR;
+        $customer_values = rtrim($customer_values,';');
+        $customer_columns = $this->setFormLabels($customer_model,['id_customer','create_time','update_time'],['customer_value'=>'属性值']);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $request = $request->all();
             $time = date('Y-m-d H:i:s',time());
             $data = [
-                'attribute_name'=>$request['attribute_name'],
-                'attribute_type'=>$request['attribute_type'],
+                'customer_name'=>$request['customer_name'],
+                'customer_type'=>$request['customer_type'],
                 'active'        =>$request['active'],
                 'update_time'   =>$time,
                 'sort'          =>$request['sort'],
             ];
 
-            $id_attribute = intval($id_attribute);
+            $id_customer = intval($id_customer);
 
-            if (strpos($request['attribute_value'],parent::SEPERATOR))
+            if (strpos($request['customer_value'],parent::SEPERATOR))
             {
-                $is_updated = $attribute_model->modify($id_attribute,$data);
+                $is_updated = $customer_model->modify($id_customer,$data);
 
                 if ($is_updated === true)
                 {
-                    foreach($attribute_value_list as $attribute_value)
+                    foreach($customer_value_list as $customer_value)
                     {
-                        $attribute_value->destroy($attribute_value['id_attribute_value']);
+                        $customer_value->destroy($customer_value['id_customer_value']);
                     }
 
-                    $attribute_values = explode(parent::SEPERATOR,$request['attribute_value']);
-                    foreach ($attribute_values as $value)
+                    $customer_values = explode(parent::SEPERATOR,$request['customer_value']);
+                    foreach ($customer_values as $value)
                     {
                         $value_insert = [
-                            'id_attribute'=>$id_attribute,
-                            'attribute_value'=>$value
+                            'id_customer'=>$id_customer,
+                            'customer_value'=>$value
                         ];
-                        $attribute_value_model->add($value_insert);
+                        $customer_value_model->add($value_insert);
                     }
 
-                    return redirect('admin/attribute');
+                    return redirect('admin/customer');
                 }
             }
 
-            return redirect("admin/attribute-update/{$id_attribute}");
+            return redirect("admin/customer-update/{$id_customer}");
 
         }
 
         $data = [
-            'attribute'=>$attribute_model->readOne($id_attribute),
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_values'=>$attribute_values,
-            'attribute_columns'=>$attribute_columns,
+            'customer'=>$customer_model->readOne($id_customer),
+            'customer_types'=>$customer_type_model->readAll(),
+            'customer_values'=>$customer_values,
+            'customer_columns'=>$customer_columns,
         ];
 
-        return view('admin.attribute.update',$data);
+        return view('admin.customer.update',$data);
     }
 
     /**
      * 查看属性
-     * @param $id_attribute
+     * @param $id_customer
      */
-    public function view($id_attribute)
+    public function view($id_customer)
     {
-        $attribute_model = new AttributeModel();
-        $attribute_type_model = new AttributeTypeModel;
+        $customer_model = new CustomerModel();
+        $customer_type_model = new CustomerTypeModel;
 
-        $attribute_values = AttributeModel::find($id_attribute)->attributeValues->toArray();
-        $attribute_columns = $this->setFormLabels($attribute_model,['id_attribute'],['attribute_value'=>'属性值']);
+        $customer_values = CustomerModel::find($id_customer)->customerValues->toArray();
+        $customer_columns = $this->setFormLabels($customer_model,['id_customer'],['customer_value'=>'属性值']);
 
         $data = [
-            'attribute'=>$attribute_model->readOne($id_attribute),
-            'attribute_types'=>$attribute_type_model->readAll(),
-            'attribute_values'=>$attribute_values,
-            'attribute_columns'=>$attribute_columns,
+            'customer'=>$customer_model->readOne($id_customer),
+            'customer_types'=>$customer_type_model->readAll(),
+            'customer_values'=>$customer_values,
+            'customer_columns'=>$customer_columns,
         ];
-        return view('admin.attribute.view',$data);
+        return view('admin.customer.view',$data);
     }
 
     /**
@@ -195,14 +191,14 @@ class AttributeController extends BackendController
      */
     public function delete(Request $request)
     {
-        $id_attribute = $request->input('id_attribute');
+        $id_customer = $request->input('id_customer');
 
-        if (empty($id_attribute))
+        if (empty($id_customer))
             echo 'false';
         else
         {
-            $attribute_model = new AttributeModel;
-            $result = $attribute_model->del(intval($id_attribute));
+            $customer_model = new CustomerModel;
+            $result = $customer_model->del(intval($id_customer));
             echo $result ? json_encode(['result' => 1]) : json_encode(['result' => 0, 'msg' => 'delete it fail!!!']);
         }
 

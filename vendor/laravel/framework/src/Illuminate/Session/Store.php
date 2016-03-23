@@ -530,7 +530,6 @@ class Store implements SessionInterface
      */
     public function forget($keys)
     {
-
         Arr::forget($this->attributes, $keys);
     }
 

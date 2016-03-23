@@ -3,7 +3,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/category')}}">属性列表</a><span class="crumb-step">&gt;</span><span>新增属性</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('/admin')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('admin/category')}}">分类列表</a><span class="crumb-step">&gt;</span><span>新增分类</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
@@ -17,8 +17,9 @@
                                 @if ($key == 'id_parent_category')
                                     <td>
                                         <select name="{{$key}}" id="{{$key}}" class="required">
-                                            @foreach ($category_list as $category)
-                                                <option valu="{{$category['id_category']}}">{{str_repeat('++',$category['level']-1)}}{{$category['category_detail']['category_name']}}</option>
+                                            <option value="0">根分类</option>
+                                            @foreach ($categories as $category)
+                                                <option valu="{{$category['id_category']}}">{{str_repeat('++',$category['level']-1)}}{{$category['category_name']}}</option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -29,7 +30,11 @@
                                             <option value="0">否</option>
                                         </select>
                                     </td>
-                                @else
+                                @elseif ($key == 'short_description' || $key == 'description')
+                                    <td>
+                                        <textarea name="{{$key}}" id="{{$key}}"></textarea>
+                                    </td>
+                                    @else
                                     <td><input type="text" name="{{$key}}" id="{{$key}}" class="common-text required" size="50"/></td>
                                 @endif
                                 </tr>
@@ -50,6 +55,7 @@
     </div>
     <!--/main-->
 </div>
+    <script type="text/javascript" src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
     <script type="text/javascript">
         $(function(){
             if ($("#category_type").find("option:selected").text() == '文本框')
@@ -63,6 +69,9 @@
                     $("#category_value").hide();
             });
         });
+
+        CKEDITOR.replace('short_description');
+        CKEDITOR.replace('description');
     </script>
 </body>
 </html>

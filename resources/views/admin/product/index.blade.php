@@ -41,7 +41,25 @@
                                     @endif
                                 </td>
                                 @foreach ($product_columns as $k=>$column)
+                                    @if ($k == 'active')
+                                        <td>
+                                            @if ($product[$k] == 1)
+                                                是
+                                            @else
+                                                否
+                                            @endif
+                                        </td>
+                                    @elseif ($k == 'id_category')
+                                        <td>
+                                        @foreach($categories as $category)
+                                            @if ($category['id_category'] == $product[$k])
+                                                {{$category['category_name']}}
+                                            @endif
+                                        @endforeach
+                                        </td>
+                                    @else
                                     <td>{{$product[$k]}}</td>
+                                    @endif
                                 @endforeach
                                 <td>
                                     <a class="link-view" href="{{url('admin/product-view')}}/{{$product['id_product']}}">查看</a>
